@@ -1,0 +1,1 @@
+Chris's NCFE Level 2 Python PortfolioThis repository contains my completed coding exercises and small projects from my Level 2 Certificate in Understanding Coding course. It demonstrates my skills in Python, including object-oriented programming (OOP), error handling, and basic software lifecycle practices.”
