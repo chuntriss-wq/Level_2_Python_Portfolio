@@ -1,38 +1,21 @@
-class Car:
-    # 1. Class Attribute (shared by all Car objects)
-    wheels = 4
+# 1. THE DRY FUNCTION (The one-time definition)
+def calculate_damage(health, armor, attack):
+    damage = attack - (armor / 2)
+    return health - damage # <--- This line MUST be indented!
 
-    # 2. Constructor Method (initializes the object's state)
-    def __init__(self, make, model, color):
-        # 3. Instance Attributes (unique to this specific car)
-        self.make = make
-        self.model = model
-        self.color = color
-        self.speed = 0  # Initial speed is 0
+# 2. MAIN SCRIPT LOGIC (These lines MUST start at the far left, NO INDENTATION)
+player_health = 100
+enemy_armor = 10
+player_attack = 25
 
-    # 4. Instance Method (a behavior/action)
-    def accelerate(self, increment):
-        """Increases the car's speed."""
-        self.speed += increment
-        return f"The {self.color} {self.make} is now traveling at {self.speed} mph."
+# DRY Logic: Calling the function every time
+player_health = calculate_damage(player_health, enemy_armor, player_attack)
+print(f"After Attack 1 (DRY): {player_health}")
 
-    # 5. Another Instance Method
-    def get_description(self):
-        """Returns a string describing the car."""
-        return f"A {self.color} {self.make} {self.model} with {self.wheels} wheels."
+player_health = calculate_damage(player_health, enemy_armor, player_attack)
+print(f"After Attack 2 (DRY): {player_health}")
 
-# ------------------------------------------------------------------
-
-# Creating objects (instances) of the Car class
-car1 = Car("Toyota", "Camry", "Red")
-car2 = Car("Ford", "Focus", "Blue")
-
-# Accessing Attributes
-print(car1.get_description())
-print(f"Car 2 has {car2.wheels} wheels.")
-
-# Calling Methods (making the objects do something)
-print(car1.accelerate(30))
-print(car2.accelerate(15))
-print(car2.accelerate(10))
+player_health = calculate_damage(player_health, enemy_armor, player_attack)
+print(f"After Attack 3 (DRY): {player_health}")
+   
 
