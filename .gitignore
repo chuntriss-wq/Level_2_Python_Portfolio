@@ -1,0 +1,20 @@
+# Python cache files
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+
+# Generated application logs
+*.log
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Editor and operating system clutter
+.vscode/
+.DS_Store
+Thumbs.db
